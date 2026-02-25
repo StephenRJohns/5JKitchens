@@ -2,11 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 
 export default function Header() {
   const { totalItems, openCart } = useCart();
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isAdmin = pathname.startsWith("/admin");
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -51,24 +54,26 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Cart Button */}
-            <button
-              onClick={openCart}
-              className="relative p-2 text-bark-700 hover:text-bark-900 transition-colors"
-              aria-label={`Open cart, ${totalItems} items`}
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              {totalItems > 0 && (
-                <span
-                  className="absolute -top-1 -right-1 bg-bark-600 text-cream-100 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center font-sans leading-none"
-                  aria-hidden="true"
-                >
-                  {totalItems > 99 ? "99+" : totalItems}
-                </span>
-              )}
-            </button>
+            {/* Cart Button — hidden on admin pages */}
+            {!isAdmin && (
+              <button
+                onClick={openCart}
+                className="relative p-2 text-bark-700 hover:text-bark-900 transition-colors"
+                aria-label={`Open cart, ${totalItems} items`}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-9H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                {totalItems > 0 && (
+                  <span
+                    className="absolute -top-1 -right-1 bg-bark-600 text-cream-100 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center font-sans leading-none"
+                    aria-hidden="true"
+                  >
+                    {totalItems > 99 ? "99+" : totalItems}
+                  </span>
+                )}
+              </button>
+            )}
 
             {/* Mobile menu toggle */}
             <button
