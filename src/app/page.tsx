@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import Newsletter from "@/components/Newsletter";
@@ -128,20 +129,17 @@ export default function HomePage() {
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Illustration */}
-            <div className="relative" aria-hidden="true">
-              <div className="aspect-square bg-bark-700 rounded-sm max-w-md mx-auto flex items-center justify-center border border-bark-600">
-                <div className="text-center p-8">
-                  <svg viewBox="0 0 120 120" className="w-32 h-32 mx-auto mb-4 opacity-60">
-                    <ellipse cx="60" cy="30" rx="25" ry="10" fill="#D4BC86" />
-                    <rect x="35" y="30" width="50" height="60" rx="4" fill="#C8A870" />
-                    <ellipse cx="60" cy="90" rx="25" ry="10" fill="#B89050" />
-                    <rect x="55" y="10" width="10" height="80" rx="3" fill="#8B6914" />
-                    <ellipse cx="60" cy="10" rx="10" ry="5" fill="#A07830" />
-                  </svg>
-                  <p className="font-serif text-cream-400 text-lg italic">Handcrafted with care</p>
-                </div>
+            <div className="relative">
+              <div className="rounded-sm overflow-hidden max-w-md mx-auto shadow-xl border border-bark-600">
+                <Image
+                  src="/5JK.png"
+                  alt="The 5JKitchens team crafting compound butters in the kitchen"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-cream-500 opacity-30" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-cream-500 opacity-30" aria-hidden="true" />
             </div>
 
             {/* Text */}
