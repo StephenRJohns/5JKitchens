@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Newsletter from "@/components/Newsletter";
 
 export const metadata: Metadata = {
@@ -42,6 +43,16 @@ export default function AboutPage() {
 
             <section>
               <h2 className="font-serif text-3xl font-bold text-bark-800 mb-6">How It Began</h2>
+              <div className="mb-8 rounded-sm overflow-hidden shadow-md border border-cream-200">
+                <Image
+                  src="/5JK.png"
+                  alt="The 5JKitchens team crafting compound butters in the kitchen"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
               <div className="space-y-4 font-sans text-bark-600 leading-relaxed text-lg">
                 <p>
                   5JKitchens began not in a commercial kitchen, but at a folding table at the Saturday farmer&apos;s market. Armed with a single batch of cultured butter made from cream sourced just forty miles away, we offered free samples and hoped for the best.
