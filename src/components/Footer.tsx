@@ -1,11 +1,8 @@
 import Link from "next/link";
-import Newsletter from "./Newsletter";
 
 export default function Footer() {
   return (
     <footer className="bg-bark-800 text-bark-200">
-      <Newsletter variant="footer" />
-
       <div className="container-max px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
@@ -63,13 +60,12 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact */}
           <div>
             <h3 className="font-serif text-cream-200 font-semibold mb-4">Stay in Touch</h3>
-            <p className="text-bark-300 text-sm mb-4 font-sans">
-              Get the latest recipes, new products, and seasonal specials delivered to your inbox.
+            <p className="text-bark-300 text-sm leading-relaxed font-sans">
+              Questions about our products? We&apos;d love to hear from you. Reach out anytime and a member of our team will get back to you.
             </p>
-            <Newsletter variant="footer" />
           </div>
         </div>
 

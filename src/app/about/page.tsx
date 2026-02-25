@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Newsletter from "@/components/Newsletter";
 
 export const metadata: Metadata = {
   title: "Our Story",
@@ -123,7 +122,6 @@ export default function AboutPage() {
         </div>
       </article>
 
-      <Newsletter />
     </>
   );
 }
