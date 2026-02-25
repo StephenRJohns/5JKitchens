@@ -13,12 +13,14 @@ interface User {
 
 interface UserTableProps {
   initialUsers: User[];
+  subscribedEmails: string[];
 }
 
 const emptyForm = { username: "", email: "", password: "", role: "user", forcePasswordChange: false };
 
-export default function UserTable({ initialUsers }: UserTableProps) {
+export default function UserTable({ initialUsers, subscribedEmails }: UserTableProps) {
   const [users, setUsers] = useState<User[]>(initialUsers);
+  const [subscribed, setSubscribed] = useState<Set<string>>(new Set(subscribedEmails));
   const [showAdd, setShowAdd] = useState(false);
   const [editUser, setEditUser] = useState<User | null>(null);
   const [deleteUser, setDeleteUser] = useState<User | null>(null);
@@ -82,6 +84,19 @@ export default function UserTable({ initialUsers }: UserTableProps) {
     }
   };
 
+  const handleToggleNewsletter = async (user: User) => {
+    const res = await fetch(`/api/admin/users/${user.id}/newsletter`, { method: "POST" });
+    if (res.ok) {
+      const data = await res.json();
+      setSubscribed((prev) => {
+        const next = new Set(prev);
+        if (data.subscribed) next.add(user.email);
+        else next.delete(user.email);
+        return next;
+      });
+    }
+  };
+
   const handleForcePassword = async (user: User) => {
     const res = await fetch(`/api/admin/users/${user.id}`, {
       method: "PUT",
@@ -116,13 +131,14 @@ export default function UserTable({ initialUsers }: UserTableProps) {
                 <th className="text-left px-4 py-3 text-bark-600 font-bold uppercase tracking-wide text-xs">Email</th>
                 <th className="text-left px-4 py-3 text-bark-600 font-bold uppercase tracking-wide text-xs">Role</th>
                 <th className="text-left px-4 py-3 text-bark-600 font-bold uppercase tracking-wide text-xs">Force PW</th>
+                <th className="text-left px-4 py-3 text-bark-600 font-bold uppercase tracking-wide text-xs">Newsletter</th>
                 <th className="text-left px-4 py-3 text-bark-600 font-bold uppercase tracking-wide text-xs">Created</th>
                 <th className="text-right px-4 py-3 text-bark-600 font-bold uppercase tracking-wide text-xs">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-cream-100">
               {users.length === 0 && (
-                <tr><td colSpan={6} className="text-center py-10 text-bark-400">No users found.</td></tr>
+                <tr><td colSpan={7} className="text-center py-10 text-bark-400">No users found.</td></tr>
               )}
               {users.map((u) => (
                 <tr key={u.id} className="hover:bg-cream-50 transition-colors">
@@ -144,6 +160,20 @@ export default function UserTable({ initialUsers }: UserTableProps) {
                     ) : (
                       <span className="text-bark-300 text-xs">No</span>
                     )}
+                  </td>
+                  <td className="px-4 py-3">
+                    <button
+                      onClick={() => handleToggleNewsletter(u)}
+                      title={subscribed.has(u.email) ? "Unsubscribe from newsletter" : "Subscribe to newsletter"}
+                      aria-label={subscribed.has(u.email) ? `Unsubscribe ${u.username} from newsletter` : `Subscribe ${u.username} to newsletter`}
+                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold transition-colors ${
+                        subscribed.has(u.email)
+                          ? "bg-sage-100 text-sage-700 hover:bg-rust-100 hover:text-rust-600"
+                          : "bg-cream-200 text-bark-400 hover:bg-sage-100 hover:text-sage-700"
+                      }`}
+                    >
+                      {subscribed.has(u.email) ? "✓ Subscribed" : "Off"}
+                    </button>
                   </td>
                   <td className="px-4 py-3 text-bark-400 text-xs">
                     {new Date(u.createdAt).toLocaleDateString()}

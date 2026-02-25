@@ -23,3 +23,21 @@ model Subscriber {
   email        String   @unique
   subscribedAt DateTime @default(now())
 }
+
+model Order {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  phone     String?
+  address1  String
+  address2  String?
+  city      String
+  state     String
+  zip       String
+  country   String   @default("US")
+  items     String
+  subtotal  Float
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+}
