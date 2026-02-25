@@ -77,12 +77,15 @@ export default function Footer() {
           <p className="text-bark-400 text-xs font-sans">
             &copy; {new Date().getFullYear()} 5JKitchens. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center">
             {["Privacy Policy", "Terms of Service"].map((item) => (
               <a key={item} href="#" className="text-bark-400 hover:text-bark-200 text-xs font-sans transition-colors">
                 {item}
               </a>
             ))}
+            <Link href="/admin/login" className="text-bark-700 hover:text-bark-500 text-xs font-sans transition-colors">
+              Admin
+            </Link>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export default function Newsletter({ variant = "hero" }: NewsletterProps) {
     return "";
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const err = validate(email);
     if (err) {
@@ -25,10 +25,19 @@ export default function Newsletter({ variant = "hero" }: NewsletterProps) {
       setStatus("error");
       return;
     }
-    // Simulate success (no backend)
-    setStatus("success");
-    setEmail("");
-    setErrorMsg("");
+    const res = await fetch("/api/newsletter/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    if (res.ok) {
+      setStatus("success");
+      setEmail("");
+      setErrorMsg("");
+    } else {
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again.");
+    }
   };
 
   if (variant === "footer") {
