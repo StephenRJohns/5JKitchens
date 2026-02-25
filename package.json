@@ -5,14 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/prisma-setup.js && next build",
-    "start": "node scripts/prisma-setup.js && prisma migrate deploy && ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts && next start",
+    "start": "node scripts/prisma-setup.js && prisma migrate deploy && ts-node --project prisma/tsconfig.json prisma/seed.ts && next start",
     "lint": "next lint",
     "postinstall": "node scripts/prisma-setup.js && prisma generate",
     "db:migrate": "prisma migrate deploy",
-    "db:seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts"
+    "db:seed": "ts-node --project prisma/tsconfig.json prisma/seed.ts"
   },
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "seed": "ts-node --project prisma/tsconfig.json prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
