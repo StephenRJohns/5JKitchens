@@ -94,7 +94,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
               </svg>
             </div>
             <div>
-              <span className="font-serif text-sm font-bold text-cream-100 block leading-none">5JKitchens</span>
+              <span className="font-serif text-sm font-bold text-cream-100 block leading-none">5J Kitchens</span>
               <span className="text-bark-400 text-[10px] uppercase tracking-widest">Admin Panel</span>
             </div>
           </Link>
@@ -187,7 +187,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
             {/* Content */}
             <div className="overflow-y-auto px-6 py-5 space-y-6">
               <p className="text-bark-500 text-sm font-sans">
-                Welcome to the 5JKitchens admin panel. Use the sidebar to navigate between sections. Below is a guide to each feature.
+                Welcome to the 5J Kitchens admin panel. Use the sidebar to navigate between sections. Below is a guide to each feature.
               </p>
 
               {HELP_SECTIONS.map((section) => (

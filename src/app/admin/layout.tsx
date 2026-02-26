@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Admin | 5JKitchens", robots: "noindex,nofollow" };
+export const metadata: Metadata = { title: "Admin | 5J Kitchens", robots: "noindex,nofollow" };
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (

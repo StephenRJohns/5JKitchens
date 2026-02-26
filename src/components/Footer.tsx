@@ -14,7 +14,7 @@ export default function Footer() {
                   <text x="20" y="26" textAnchor="middle" fill="#FAF5E8" fontSize="12" fontFamily="serif" fontWeight="bold">5J</text>
                 </svg>
               </div>
-              <span className="font-serif text-lg font-bold text-cream-100">5JKitchens</span>
+              <span className="font-serif text-lg font-bold text-cream-100">5J Kitchens</span>
             </div>
             <p className="text-bark-300 text-sm leading-relaxed font-sans mb-4">
               Handcrafted, small-batch butters and dairy made with love and the finest ingredients. Experience culinary craftsmanship.
@@ -71,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t border-bark-700 mt-10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-bark-400 text-xs font-sans">
-            &copy; {new Date().getFullYear()} 5JKitchens. All rights reserved.
+            &copy; {new Date().getFullYear()} 5J Kitchens. All rights reserved.
           </p>
           <div className="flex gap-6 items-center">
             {["Privacy Policy", "Terms of Service"].map((item) => (

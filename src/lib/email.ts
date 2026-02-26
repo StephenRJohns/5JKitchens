@@ -32,7 +32,7 @@ function createTransport() {
 
 export async function sendEmail(options: SendEmailOptions): Promise<{ ok: boolean; message: string }> {
   const transport = createTransport();
-  const from = process.env.SMTP_FROM || "5JKitchens <noreply@5jkitchens.com>";
+  const from = process.env.SMTP_FROM || "5J Kitchens <noreply@5jkitchens.com>";
 
   if (!transport) {
     // No SMTP configured — log and pretend success (useful in dev)

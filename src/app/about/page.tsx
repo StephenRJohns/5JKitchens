@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Our Story",
-  description: "Learn about 5JKitchens — small-batch artisan butters, buttermilk, and ranch crafted with care.",
+  description: "Learn about 5J Kitchens — small-batch artisan butters, buttermilk, and ranch crafted with care.",
 };
 
 const values = [
@@ -89,7 +89,7 @@ export default function AboutPage() {
             Made with Care,<br className="hidden sm:block" /> Shared with Love
           </h1>
           <p className="text-bark-300 font-sans text-lg leading-relaxed">
-            From a folding table at the farmer&apos;s market to your kitchen — the story of 5JKitchens.
+            From a folding table at the farmer&apos;s market to your kitchen — the story of 5J Kitchens.
           </p>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <div className="rounded-sm overflow-hidden shadow-lg border border-cream-200">
               <Image
                 src="/5JK.png"
-                alt="The 5JKitchens team crafting compound butters in the kitchen"
+                alt="The 5J Kitchens team crafting compound butters in the kitchen"
                 width={700}
                 height={700}
                 className="w-full h-auto"
@@ -118,7 +118,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 font-sans text-bark-600 leading-relaxed text-base">
                 <p>
-                  5JKitchens began not in a commercial kitchen, but at a folding table at the Saturday farmer&apos;s market. Armed with a single batch of cultured butter made from cream sourced just forty miles away, we offered free samples and hoped for the best.
+                  5J Kitchens began not in a commercial kitchen, but at a folding table at the Saturday farmer&apos;s market. Armed with a single batch of cultured butter made from cream sourced just forty miles away, we offered free samples and hoped for the best.
                 </p>
                 <p>
                   By 10am, every log was sold. By the following Saturday, we had a line. That was the beginning — and the only sign we needed that people were hungry for food made the right way.
@@ -138,7 +138,7 @@ export default function AboutPage() {
           <blockquote className="font-serif text-2xl lg:text-3xl italic text-cream-200 leading-relaxed mb-6">
             The best food is simple, made with care, and worth sharing. That&apos;s the only philosophy we&apos;ve ever needed.
           </blockquote>
-          <p className="font-sans text-bark-400 text-sm uppercase tracking-widest">— The 5JKitchens Team</p>
+          <p className="font-sans text-bark-400 text-sm uppercase tracking-widest">— The 5J Kitchens Team</p>
         </div>
       </section>
 

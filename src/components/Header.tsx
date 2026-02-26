@@ -22,7 +22,7 @@ export default function Header() {
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group" aria-label="5JKitchens Home">
+          <Link href="/" className="flex items-center gap-3 group" aria-label="5J Kitchens Home">
             <div className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center" aria-hidden="true">
               <svg viewBox="0 0 40 40" className="w-full h-full">
                 <circle cx="20" cy="20" r="19" fill="#5C3B1E" />
@@ -31,7 +31,7 @@ export default function Header() {
             </div>
             <div>
               <span className="font-serif text-lg lg:text-xl font-bold text-bark-800 group-hover:text-bark-600 transition-colors leading-none block">
-                5JKitchens
+                5J Kitchens
               </span>
               <span className="font-sans text-[9px] uppercase tracking-[0.2em] text-bark-400 hidden lg:block">
                 Artisan Kitchen Goods

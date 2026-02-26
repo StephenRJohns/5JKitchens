@@ -42,7 +42,7 @@ export default function ProductImage({ product, size = "md", className = "" }: P
           className="text-xs font-sans font-bold tracking-widest uppercase opacity-60"
           style={{ color: product.color }}
         >
-          5JKitchens
+          5J Kitchens
         </span>
       </div>
     </div>
@@ -99,7 +99,7 @@ function ProductSVGIcon({ product }: { product: Product }) {
           {/* Label */}
           <rect x="18" y="42" width="24" height="20" rx="2" fill="white" opacity="0.3" />
           <text x="30" y="53" textAnchor="middle" fill="white" fontSize="4" fontFamily="serif">Ranch</text>
-          <text x="30" y="59" textAnchor="middle" fill="white" fontSize="3.5" fontFamily="serif">5JKitchens</text>
+          <text x="30" y="59" textAnchor="middle" fill="white" fontSize="3.5" fontFamily="serif">5J Kitchens</text>
         </svg>
       );
   }

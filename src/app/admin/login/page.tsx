@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
               <text x="20" y="26" textAnchor="middle" fill="#FAF5E8" fontSize="12" fontFamily="serif" fontWeight="bold">5J</text>
             </svg>
           </div>
-          <h1 className="font-serif text-2xl font-bold text-cream-100">5JKitchens Admin</h1>
+          <h1 className="font-serif text-2xl font-bold text-cream-100">5J Kitchens Admin</h1>
           <p className="text-bark-400 text-sm mt-1">Sign in to the admin panel</p>
         </div>
 

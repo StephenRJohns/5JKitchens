@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 import Newsletter from "@/components/Newsletter";
 
 export const metadata: Metadata = {
-  title: "5JKitchens — Artisan Handcrafted Butters & Dairy",
+  title: "5J Kitchens — Artisan Handcrafted Butters & Dairy",
 };
 
 export default function HomePage() {
@@ -133,7 +133,7 @@ export default function HomePage() {
               <div className="rounded-sm overflow-hidden max-w-md mx-auto shadow-xl border border-bark-600">
                 <Image
                   src="/5JK.png"
-                  alt="The 5JKitchens team crafting compound butters in the kitchen"
+                  alt="The 5J Kitchens team crafting compound butters in the kitchen"
                   width={600}
                   height={600}
                   className="w-full h-auto"
@@ -153,7 +153,7 @@ export default function HomePage() {
               </h2>
               <div className="space-y-4 font-sans text-bark-300 leading-relaxed">
                 <p>
-                  5JKitchens began at a farmer&apos;s market table with a single recipe: a classic cultured butter made with cream from a single dairy farm just forty miles away. People kept coming back. So did we.
+                  5J Kitchens began at a farmer&apos;s market table with a single recipe: a classic cultured butter made with cream from a single dairy farm just forty miles away. People kept coming back. So did we.
                 </p>
                 <p>
                   Today we still make everything in small batches — by hand, in our kitchen — using the same commitment to quality that got us here. No shortcuts. No mystery ingredients. Just honest, delicious food made the way it deserves to be.
@@ -171,7 +171,7 @@ export default function HomePage() {
       </section>
 
       {/* Value props */}
-      <section className="section-padding bg-cream-50" aria-label="Why choose 5JKitchens">
+      <section className="section-padding bg-cream-50" aria-label="Why choose 5J Kitchens">
         <div className="container-max">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {[

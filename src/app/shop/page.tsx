@@ -45,7 +45,7 @@ export default function ShopPage() {
         <div className="relative z-10">
           <div className="flex items-center justify-center gap-4 mb-3" aria-hidden="true">
             <div className="h-px w-10 bg-bark-400" />
-            <span className="font-sans text-xs uppercase tracking-[0.3em] text-bark-400">5JKitchens</span>
+            <span className="font-sans text-xs uppercase tracking-[0.3em] text-bark-400">5J Kitchens</span>
             <div className="h-px w-10 bg-bark-400" />
           </div>
           <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-3">Shop All Products</h1>
